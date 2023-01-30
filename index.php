@@ -40,6 +40,10 @@
 
     ];
 
-    var_dump($hotels);
+    foreach($hotels as $hotel){
+    foreach($hotel as $item){
+        echo $item."<br>";
+    }
+}
 ?>
 
