@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    margin-top: 2em;
+}
+
+.park {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    gap: 3em;
+}
+
+.button {
+    text-align: center;
+    margin: 2em 0em;
+}
