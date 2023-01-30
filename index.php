@@ -52,8 +52,8 @@
     <title>Array php</title>
 </head>
     <body>
-        <table class="mt-3">
-            <thead>
+        <table class="mt-3 table table-bordered">
+            <thead class="text-center">
                 <th>Nome</th>
                 <th>Descrizione</th>
                 <th>Voto</th>
@@ -62,16 +62,16 @@
             </thead>
             <tbody>
                 <?php foreach($hotels as $hotel){?>
-                    <tr>
+                    <tr class="text-center">
                         <td><?php echo $hotel['name'];?></td>
                         <td><?php echo $hotel['description'];?></td>
                         <td><?php echo $hotel['vote'];?></td>
                         <td><?php echo $hotel['distance_to_center'];?></td>
                         <td>
                             <?php if($hotel['parking']){
-                                echo 'Si';
+                                echo 'Il parcheggio è disponibile';
                             }else{
-                                echo 'No';
+                                echo 'Il parcheggio non è disponibile';
                                 }; ?>
                         </td>
                     </tr>
