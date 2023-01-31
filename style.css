@@ -14,6 +14,7 @@ form {
     justify-content: center;
     margin-top: 1em;
     gap: 3em;
+    align-items: center;
 }
 
 .button {

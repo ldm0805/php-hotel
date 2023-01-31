@@ -70,10 +70,10 @@ foreach ($hotels as $hotel) {
 
 <body>
         <form action="./index.php" methods="GET">
-            <h1 class="text-center">Cerca l'hotel in base al parcheggio:</h1>
+            <h1 class="text-center">Cerca l'hotel in base al parcheggio oppure in base al voto:</h1>
             <div class="park">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="parking" id="radio_1" value="yes_parking">
+                    <input class="form-check-input" type="radio" name="parking" id="radio_1" value="yes_parking" >
                     <label class="form-check-label" for="radio_1">
                         Con parcheggio
                     </label>
@@ -84,9 +84,9 @@ foreach ($hotels as $hotel) {
                         Senza parcheggio
                     </label>
                 </div>
-                <div class="form-group">
+                <div class="form-check d-flex align-items-center">
                 <label for="vote">Voto:</label>
-                <input type="number" name="vote" id="vote" min="1" max="5" step="1">
+                <input class="form-control" type="number" name="vote" id="vote" min="1" max="5" step="1" value="<?php echo isset($_GET['vote']) ? $_GET['vote'] : '' ?>">
                 </div>
             </div>
             <div class="button">
@@ -98,26 +98,20 @@ foreach ($hotels as $hotel) {
 
         <table class="table table table-bordered">
             <thead class="text-center">
-            <?php foreach($titles as $title){?>
-        <th><?php echo $title;?></th>
-        <?php }?>
+                <?php foreach($titles as $title){?>
+                    <th><?php echo $title;?></th>
+                <?php }?>
             </thead>
             <tbody  class="text-center"> 
                 <?php foreach ($filteredHotels as $hotel) { ?>
                 <tr>
                     <td><?php echo $hotel['name'];?></td>
                     <td><?php echo $hotel['description'];?></td>
+                    <td>
+                        <?php echo $hotel['parking'] ? 'Il parcheggio è disponibile' : 'Il parcheggio non è disponibile';?>
+                    </td>
                     <td><?php echo $hotel['vote'];?></td>
                     <td><?php echo $hotel['distance_to_center'];?></td>
-                    <td>
-                        <?php if($hotel['parking'])
-                        {
-                            echo 'Il parcheggio è disponibile';
-                        }
-                        else{
-                            echo 'Il parcheggio non è disponibile';
-                            }; ?>
-                    </td>
                 </tr>
                 <?php } ?>
             </tbody>

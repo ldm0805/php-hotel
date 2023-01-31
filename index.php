@@ -65,15 +65,11 @@
                     <tr class="text-center">
                         <td><?php echo $hotel['name'];?></td>
                         <td><?php echo $hotel['description'];?></td>
+                        <td>
+                            <?php echo $hotel['parking'] ? 'Il parcheggio è disponibile' : 'Il parcheggio non è disponibile';?>
+                        </td>
                         <td><?php echo $hotel['vote'];?></td>
                         <td><?php echo $hotel['distance_to_center'];?></td>
-                        <td>
-                            <?php if($hotel['parking']){
-                                echo 'Il parcheggio è disponibile';
-                            }else{
-                                echo 'Il parcheggio non è disponibile';
-                                }; ?>
-                        </td>
                     </tr>
                 <?php }?>
 
